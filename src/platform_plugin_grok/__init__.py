@@ -37,7 +37,7 @@ VERIFIED = "2026-11-03"  # the day the tables below were checked against SOURCES
 # (the page: a second's limit is a minute's divided by 48). The figures here are the Grok 4.20 and 4.3
 # models' (grok-4.5 to 4.7: 150 to 500 a second, 50M to 100M tokens a minute).
 PLANS = (
-    Plan("free", "No credits", api_access=False, price="nothing bought",
+    Plan("free", "Free", api_access=False, price="nothing bought",
          note="xAI publishes no free API credits (2026-11-03): the API runs on prepaid credits bought at console.x.ai; "
               "with credits, choose Tier 0 (the plan until $50 has been spent)"),
     Plan("tier0", "Tier 0", rpm=1_776, tpm=10_000_000, price="credits bought; under $50 spent",

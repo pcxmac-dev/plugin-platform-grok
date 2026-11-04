@@ -86,7 +86,7 @@ def test_the_free_plan_sends_nothing(installed, settings_for):
     settings = settings_for(GROK_API_KEY=KEY)
     assert settings.plugin("grok").plan == "free" and not ASSISTANT.served(settings) and "prepaid credits" in ASSISTANT.free_note(settings)
     session = FakeSession()
-    with pytest.raises(NotEntitled, match="No credits plan has no API access"):
+    with pytest.raises(NotEntitled, match="Free plan has no API access"):
         evaluate(Question("x"), settings, assistant="grok", session=session)
     assert session.calls == []
 
