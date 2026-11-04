@@ -1,4 +1,4 @@
-"""Grok (xAI) for Liminal: an AI assistant plugin (liminal_lib.assistants, plugin API 2.0) that
+"""Grok (xAI) for Liminal: an AI assistant plugin (liminal_libs.assistants, plugin API 2.0) that
 evaluates standardized arguments through xAI's Responses API on your own API key, with the tiers,
 models and prices written in, dated, and checked against xAI's pages.
 
@@ -24,7 +24,7 @@ the models and rate-limit pages (SOURCES) and fails when a written-in figure is 
 """
 from __future__ import annotations
 
-from liminal_lib.assistants import AssistantPlugin, Caps, Model, Plan, Source
+from liminal_libs.assistants import AssistantPlugin, Caps, Model, Plan, Source
 
 from .assistant import API, GrokAssistant
 

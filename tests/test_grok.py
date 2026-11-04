@@ -9,11 +9,11 @@ from datetime import datetime, timezone
 
 import pytest
 
-from liminal_lib.assistants import Answer, Question, Usage, evaluate
-from liminal_lib.errors import NotEntitled, RateLimited, SourceError, Unauthorized
+from liminal_libs.assistants import Answer, Question, Usage, evaluate
+from liminal_libs.errors import NotEntitled, RateLimited, SourceError, Unauthorized
 
-import platform_plugin_grok as grok
-from platform_plugin_grok import ASSISTANT, MODELS, PLANS, SOURCES, GrokPlugin
+import plugin_platform_grok as grok
+from plugin_platform_grok import ASSISTANT, MODELS, PLANS, SOURCES, GrokPlugin
 
 from conftest import FakeResponse, FakeSession
 
@@ -46,7 +46,7 @@ def test_it_loads_as_an_assistant_plugin(installed):
     assert isinstance(p, GrokPlugin) and p.KIND == "assistant" and p.SYSTEM == "platform" and p.api == "2.0" and p.vendor == "xAI"
     assert [k.name for k in p.keys] == ["GROK_API_KEY", "GROK_ACCOUNT"] and p.keys[0].aliases == ("XAI_API_KEY",)
     assert p.options == ("GROK_MAX_OUTPUT_TOKENS",) and p.has_scan and p.has_settings  # no effort option
-    from liminal_lib.sources import registry
+    from liminal_libs.sources import registry
 
     assert registry.errors() == [] and set(registry.variables()) >= {"GROK_API_KEY", "XAI_API_KEY", "GROK_PLAN", "GROK_MODEL"}
 

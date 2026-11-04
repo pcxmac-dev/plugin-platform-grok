@@ -1,4 +1,4 @@
-"""xAI's Responses API through the contract's client (liminal_lib.assistants.ResponsesAssistant: the
+"""xAI's Responses API through the contract's client (liminal_libs.assistants.ResponsesAssistant: the
 OpenAI-shaped request and answer), as xAI documents it at https://docs.x.ai (verified 2026-11-03):
 POST /v1/responses with `input`, `instructions`, `max_output_tokens`, `store`; the answer's
 `output[]` message items; `usage` with the vendor's own cost figure (`cost_in_nano_usd`: ten
@@ -7,8 +7,8 @@ from __future__ import annotations
 
 from typing import Any, Mapping
 
-from liminal_lib.assistants import ResponsesAssistant
-from liminal_lib.errors import NotEntitled, SourceError, Unauthorized
+from liminal_libs.assistants import ResponsesAssistant
+from liminal_libs.errors import NotEntitled, SourceError, Unauthorized
 
 API = "https://api.x.ai"
 

@@ -1,7 +1,7 @@
-# platform-plugin-grok
+# plugin-platform-grok
 
-Grok for [Liminal](https://github.com/pcxmac-dev/liminal-app): an AI assistant plugin (plugin API
-2.0, `liminal_lib.assistants`, a platform plugin) that evaluates standardized arguments (a question
+Grok for [Liminal](https://github.com/pcxmac-dev/liminal-charts): an AI assistant plugin (plugin API
+2.0, `liminal_libs.assistants`, a platform plugin) that evaluates standardized arguments (a question
 over headlines, an assessment, a report; a judge over earlier answers) through xAI's Responses API
 on your own API key, with xAI's tiers, models and prices written in.
 
@@ -27,10 +27,10 @@ Nothing is sent from an offline copy of the app (`LIMINAL_OFFLINE`).
 Into the app's environment, from the app's folder:
 
 ```powershell
-.venv\Scripts\python.exe -m pip install "platform-plugin-grok @ git+https://github.com/pcxmac-dev/platform-plugin-grok@release/0.2.0"
+.venv\Scripts\python.exe -m pip install "plugin-platform-grok @ git+https://github.com/pcxmac-dev/plugin-platform-grok@release/0.2.0"
 ```
 
-or with the app's plugins (`pip install -e ".[plugins]"` in liminal-app). The app loads it on its next
+or with the app's plugins (`pip install -e ".[plugins]"` in liminal-charts). The app loads it on its next
 start. Save the key with the app's `tools/set-key.ps1` or on the Plugins view (it is read from your
 user environment variables only, never written to a file).
 

@@ -2,7 +2,9 @@
 
 ## 0.2.0 (2026-11-03)
 
-The first release: `GrokPlugin` (an `AssistantPlugin`, plugin API 2.0, liminal-lib 1.3.0) and
+Renamed `plugin-platform-grok` (the package `plugin_platform_grok`; it was `platform-plugin-grok`) on 2026-11-03: the naming by system (plugins are `plugin-<app>-<name>`), on liminal-libs 1.4.0 (`liminal_libs`, the library renamed with it).
+
+The first release: `GrokPlugin` (an `AssistantPlugin`, plugin API 2.0, liminal-libs 1.3.0) and
 `GrokAssistant` on xAI's Responses API. The plans (free: no API access, xAI publishing no free
 credits; Tier 0 to Tier 4 by cumulative spend, Enterprise), the models (Grok 4.20 non-reasoning by
 default, the 4.20 reasoning model, 4.3, Build 0.1, 4.5, 4.6, 4.7, the multi-agent model, with their
