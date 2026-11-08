@@ -78,6 +78,7 @@ class GrokPlugin(AssistantPlugin):
     """Grok: the plugin (see the module's docstring)."""
 
     name = "grok"
+    ICON = "grok"  # Grok's mark (liminal-libs 1.33.0's icons.js)
     title = "Grok"
     about = "xAI's Grok through the Responses API: evaluations of standardized arguments on your key"
     vendor = "xAI"
