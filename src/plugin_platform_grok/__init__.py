@@ -1,10 +1,11 @@
-"""Grok (xAI) for Liminal: an AI assistant plugin (liminal_libs.assistants, plugin API 2.0) that
+"""Grok (xAI) for Liminal: an AI assistant plugin (liminal_libs.assistants, plugin API 2.2) that
 evaluates standardized arguments through xAI's Responses API on your own API key, with the tiers,
 models and prices written in, dated, and checked against xAI's pages.
 
 A Liminal plugin released on its own, registered under the entry point group `liminal.providers` as
-`grok`: the plugin `GrokPlugin` (ASSISTANT below), its assistant `GrokAssistant` (assistant.py). It
-relies on plugin API 2.0 and nothing of the apps.
+`grok`: the plugin `GrokPlugin` (ASSISTANT below), its assistant `GrokAssistant` (assistant.py), what it
+attaches to its card (apis.py: the xAI API's parts, its pages, limits and prices). It relies on plugin API 2.2
+and nothing of the apps.
 
 What the user sets (the Plugins view's Setup, or the app's key script): `GROK_API_KEY` (read as
 `XAI_API_KEY` too), `GROK_ACCOUNT` (the email or account name the key belongs to: shown with its
@@ -26,9 +27,10 @@ from __future__ import annotations
 
 from liminal_libs.assistants import AssistantPlugin, Caps, Model, Plan, Source
 
+from .apis import APIS
 from .assistant import API, GrokAssistant
 
-__all__ = ["ASSISTANT", "GrokPlugin", "GrokAssistant", "PLANS", "MODELS", "SOURCES", "VERIFIED", "API"]
+__all__ = ["ASSISTANT", "GrokPlugin", "GrokAssistant", "PLANS", "MODELS", "SOURCES", "VERIFIED", "API", "APIS"]
 
 VERIFIED = "2026-11-03"  # the day the tables below were checked against SOURCES
 
@@ -84,7 +86,8 @@ class GrokPlugin(AssistantPlugin):
     vendor = "xAI"
     signup = "https://console.x.ai/"
     order = 501
-    api = "2.0"
+    api = "2.2"  # 2.2: what it attaches to (apis)
+    apis = APIS  # the xAI API: its parts, pages, limits and prices (apis.py)
     assistant = GrokAssistant
     plans = PLANS
     models = MODELS

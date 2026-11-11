@@ -43,7 +43,7 @@ def models(*ids):
 def test_it_loads_as_an_assistant_plugin(installed):
     found = installed(ASSISTANT)
     p = found["grok"]
-    assert isinstance(p, GrokPlugin) and p.KIND == "assistant" and p.SYSTEM == "platform" and p.api == "2.0" and p.vendor == "xAI"
+    assert isinstance(p, GrokPlugin) and p.KIND == "assistant" and p.SYSTEM == "platform" and p.api == "2.2" and p.vendor == "xAI"
     assert [k.name for k in p.keys] == ["GROK_API_KEY", "GROK_ACCOUNT"] and p.keys[0].aliases == ("XAI_API_KEY",)
     assert p.options == ("GROK_MAX_OUTPUT_TOKENS",) and p.has_scan and p.has_settings  # no effort option
     from liminal_libs.sources import registry

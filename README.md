@@ -1,7 +1,7 @@
 # plugin-platform-grok
 
 Grok for [Liminal](https://github.com/pcxmac-dev/liminal-charts): an AI assistant plugin (plugin API
-2.0, `liminal_libs.assistants`, a platform plugin) that evaluates standardized arguments (a question
+2.2, `liminal_libs.assistants`, a platform plugin) that evaluates standardized arguments (a question
 over headlines, an assessment, a report; a judge over earlier answers) through xAI's Responses API
 on your own API key, with xAI's tiers, models and prices written in.
 
@@ -21,6 +21,22 @@ on your own API key, with xAI's tiers, models and prices written in.
   gone, which is a new release of this plugin.
 
 Nothing is sent from an offline copy of the app (`LIMINAL_OFFLINE`).
+
+## Its API
+
+The [xAI API](https://docs.x.ai/developers/rest-api-reference/inference) at `https://api.x.ai`:
+[`POST /v1/responses`](https://docs.x.ai/developers/rest-api-reference/inference/responses) for every evaluation and
+Connect's probe, [`GET /v1/models`](https://docs.x.ai/developers/rest-api-reference/inference/models) for Connect's
+models list, with the key as a bearer token (made on the console's
+[API keys](https://console.x.ai/team/default/api-keys) page). Its limits are the
+[tiers'](https://docs.x.ai/developers/rate-limits) requests a second and tokens a minute, by cumulative spend; its
+prices are per token ([models and pricing](https://docs.x.ai/developers/models)), each answer carrying its own cost;
+its status is at [status.x.ai](https://status.x.ai/). The Responses API now also takes `reasoning.effort` and
+`safety_identifier`, which this plugin does not send.
+
+`GrokPlugin.apis` (`apis.py`, plugin API 2.2) says this on the plugin's page, with every other part of the API's
+reference (Chat Completions, images, videos, voice, files, batches, collections, the Management API ...) and its notable
+calls, as read on 2026-11-11.
 
 ## Install
 
